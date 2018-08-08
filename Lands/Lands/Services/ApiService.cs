@@ -8,32 +8,32 @@
     using System.Threading.Tasks;
     using Models;
     using Newtonsoft.Json;
-    //using Plugin.Connectivity;
+    using Plugin.Connectivity;
     //using Domain;
 
     public class ApiService
     {
         public async Task<Response> CheckConnection()
         {
-            //if (!CrossConnectivity.Current.IsConnected)
-            //{
-            //    return new Response
-            //    {
-            //        IsSuccess = false,
-            //        Message = "Please turn on your internet settings.",
-            //    };
-            //}
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = "Please turn on your internet settings.",
+                };
+            }
 
-            //var isReachable = await CrossConnectivity.Current.IsRemoteReachable(
-            //    "google.com");
-            //if (!isReachable)
-            //{
-            //    return new Response
-            //    {
-            //        IsSuccess = false,
-            //        Message = "Check you internet connection.",
-            //    };
-            //}
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable(
+                "google.com");
+            if (!isReachable)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = "Check you internet connection.",
+                };
+            }
 
             return new Response
             {
