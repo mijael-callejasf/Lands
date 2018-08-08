@@ -22,8 +22,8 @@
         [JsonProperty(PropertyName = "capital")]
         public string Capital { get; set; }
 
-        [JsonProperty(PropertyName = "AltSpellings")]
-        public List<string> altSpellings { get; set; }
+        [JsonProperty(PropertyName = "altSpellings")]
+        public List<string> AltSpellings { get; set; }
 
         [JsonProperty(PropertyName = "region")]
         public string Region { get; set; }
@@ -31,8 +31,8 @@
         [JsonProperty(PropertyName = "subregion")]
         public string Subregion { get; set; }
 
-        [JsonProperty(PropertyName = "")]
-        public int population { get; set; }
+        [JsonProperty(PropertyName = "population")]
+        public int Population { get; set; }
 
         [JsonProperty(PropertyName = "latlng")]
         public List<double> Latlng { get; set; }
@@ -41,10 +41,10 @@
         public string Demonym { get; set; }
 
         [JsonProperty(PropertyName = "area")]
-        public int Area { get; set; }
+        public double? Area { get; set; }
 
         [JsonProperty(PropertyName = "gini")]
-        public double Gini { get; set; }
+        public double? Gini { get; set; }
 
         [JsonProperty(PropertyName = "timezones")]
         public List<string> Timezones { get; set; }
@@ -75,5 +75,7 @@
 
         [JsonProperty(PropertyName = "cioc")]
         public string Cioc { get; set; }
+
+
     }
 }
