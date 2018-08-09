@@ -5,6 +5,7 @@
         #region ViewModels
         public LoginViewModels Login { get; set; }
         public LandsViewModels Lands { get; set; }
+        public LandViewModel Land { get; set; }
         #endregion
 
         #region Constructors
