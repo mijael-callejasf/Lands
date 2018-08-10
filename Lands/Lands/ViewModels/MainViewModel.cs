@@ -1,7 +1,14 @@
 ﻿namespace Lands.ViewModels
 {
+    using System.Collections.Generic;
+    using Models;
+
     public class MainViewModel
     {
+        #region Properties
+        public List<Land> LandsList;
+        #endregion
+
         #region ViewModels
         public LoginViewModels Login { get; set; }
         public LandsViewModels Lands { get; set; }

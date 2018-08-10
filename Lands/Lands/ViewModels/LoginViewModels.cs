@@ -43,6 +43,9 @@
         {
             this.IsEnabled = true;
             this.IsRemembered = true;
+
+            this.Email = "mijael.callejasf@gmail.com";
+            this.Password = "1234";
         }
         #endregion
 

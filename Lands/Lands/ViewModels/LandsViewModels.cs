@@ -15,11 +15,11 @@
         #region Services
         private ApiService apiService;
         #endregion
+
         #region Attributes
         private ObservableCollection<LandItemViewModel> lands;
         private bool isRefreshing;
         public string filter;
-        private List<Land> landsList;
         #endregion
 
         #region Properties
@@ -86,16 +86,17 @@
                 return;
             }
 
-            this.landsList = (List<Land>)response.Result;
+            MainViewModel.GetInstance().LandsList = (List<Land>)response.Result;
             Lands = new ObservableCollection<LandItemViewModel>(
                 this.ToLandItemViewModel());
             this.IsRefreshing = false;
         }
         #endregion
+
         #region Methods
         public IEnumerable<LandItemViewModel> ToLandItemViewModel()
         {
-            return this.landsList.Select(l => new LandItemViewModel
+            return MainViewModel.GetInstance().LandsList.Select(l => new LandItemViewModel
             {
                 Alpha2Code = l.Alpha2Code,
                 Alpha3Code = l.Alpha3Code,
@@ -124,6 +125,7 @@
             });
         }
         #endregion
+
         #region Commnads
         public ICommand RefreshCommand
         {
